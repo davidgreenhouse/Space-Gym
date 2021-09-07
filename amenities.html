@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+    <link rel="stylesheet" href="style.css">
+    <title>Space Gym</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <video muted loop autoplay id="worldBackground">
+                <source src="/img/worldBackground.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <a class="navbar-brand d-lg-none" href="spaceG.html"><img src="img/spaceGymNavLogoRemove.png"
+                    alt="SpaceGym Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html"><strong>About</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html"><strong>Classes</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="amenities.html"><strong>Amenities</strong></a>
+                    <li><a class="d-none d-lg-block" href="spaceG.html"><img src="img/spaceGymNavLogoRemove.png"
+                                alt="SpaceGym Logo" /></a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html"><strong>Schedule</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html"><strong>Shop</strong></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false"><strong>Account</strong>
+                        </a>
+                        <div class="dropdown-menu" style="background-color: color#7ed957; box-shadow:0 0 5px #7ed957;
+                text-shadow: 0 0 5px #7ed957;">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#modal1" role="button"
+                                href="#">Register</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#modal2" role="button"
+                                id="loginButton2" href="#">Log In</a>
+                        </div>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="modal1" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginEmail">Email Address</label>
+                                        <input type="email" class="form-control form-control-sm" id="loginEmail"
+                                            placeholder="Enter primary email">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginUsername">New Username</label>
+                                        <input type="name" class="form-control form-control-sm" id="NewloginUsername"
+                                            placeholder="Select a username">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginPassword">New Password</label>
+                                        <input type="password" class="form-control form-control-sm"
+                                            id="NewloginPassword" placeholder="Select a password">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-dark btn-sm ml-auto"
+                                        data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm ml-1">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--logIn modal-->
+        <div id="modal2" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginUsername">Username</label>
+                                        <input type="name" class="form-control form-control-sm" id="loginUsername"
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginPassword">Password</label>
+                                        <input type="password" class="form-control form-control-sm" id="loginPassword"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-dark btn-sm ml-auto"
+                                        data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm ml-1">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--logIn modal above-->
+    </header>
+
+    <div class="col-12" id="amenTitle"></div>
+    <div class="contiainer">
+        <div class="info">
+            <h1>Space Gym Amenities</h1>
+        </div>
+        <div class="row" style="align-items: center;">
+            <div class="col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">2</div>
+                            <div class="month">July</div>
+                        </div><img src="/img/floatingchamber.jpeg" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">Floating Chamber</div>
+                        <h1 class="title">Relax in our Floating Water Chambers</h1>
+                        <h2 class="sub_title">Never been more relaxed.</h2>
+                        <p class="description">Floating Chambers offer crazy relaxtion after we push your limits in
+                            other classes. check them out!!</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 45 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 51
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">4</div>
+                            <div class="month">July</div>
+                        </div><img src="/img/space-cycle.jpeg" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">Space Cycle Room</div>
+                        <h1 class="title">To infiniti and Beyond</h1>
+                        <h2 class="sub_title">Let's Cycle to Space together!</h2>
+                        <p class="description">New York, the largest city in the U.S., is an architectural marvel with
+                            plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 47 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 51
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">4</div>
+                            <div class="month">July</div>
+                        </div><img src="/img/Yoga.png" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">Outdoor Yoga</div>
+                        <h1 class="title">Yoga under the Sky!</h1>
+                        <h2 class="sub_title">Join Our Outdoor Yoga Classes</h2>
+                        <p class="description">There is no better thing then Yoga under are starry night. We also offer
+                            night-time Yoga Classes</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 1 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 500
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">27</div>
+                            <div class="month">Mar</div>
+                        </div><img src="/img/pool.jpeg" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">Pool</div>
+                        <h1 class="title">Space Pool</h1>
+                        <h2 class="sub_title">Swimming is always better with a starry night and a beautiful view</h2>
+                        <p class="description">Swimming is FUN</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 3 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 50034
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">4</div>
+                            <div class="month">July</div>
+                        </div><img src="/img/boxingClass.png" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">MMA Package</div>
+                        <h1 class="title">Learn to fight more than space invaders</h1>
+                        <h2 class="sub_title">The most fun, challenging exercise room you can enter</h2>
+                        <p class="description">Offers a Variety of MMA Classes</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col col-md-4 col-sm-12">
+                <div class="post-module">
+                    <div class="thumbnail">
+                        <div class="date">
+                            <div class="day">27</div>
+                            <div class="month">Mar</div>
+                        </div><img src="/img/stretch.png" />
+                    </div>
+                    <div class="post-content">
+                        <div class="category">Running Groups</div>
+                        <h1 class="title">Stay in shape for the invasion</h1>
+                        <h2 class="sub_title">Run throughout the city with your space crew</h2>
+                        <p class="description">Explore your city.</p>
+                        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins
+                                ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39
+                                    comments</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-2 offset-1">
+                    <ul class="list-unstyled">
+                        <li><a class="btn" href="#contactModal">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="icon" class="col-6 col-sm-5 text-center">
+                    <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/">Insta<i
+                            class="fa fa-instagram"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/">Facebook<i
+                            class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">Twitter<i
+                            class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/">Youtube<i
+                            class="fa fa-youtube"></i></a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a role="button" class="btn btn-link" href="tel+12065551234"><i class="fa fa-phone"></i> 867-5309
+                    </a><br />
+                    <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i
+                            class="fa fa-envelope-o"></i> spacegym@urmommashouse.org</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+
+</html>

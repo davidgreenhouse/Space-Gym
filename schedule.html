@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/calendar.css/evo-calendar.css" />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="/calendar.css/evo-calendar.midnight-blue.min.css"/>
+    <title>Space Gym</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <video muted loop autoplay id="worldBackground">
+                <source src="/img/worldBackground.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <a class="navbar-brand d-lg-none" href="spaceG.html"><img src="img/spaceGymNavLogoRemove.png"
+                    alt="SpaceGym Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html"><strong>About</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html"><strong>Classes</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="amenities.html"><strong>Amenities</strong></a>
+                    <li><a class="d-none d-lg-block" href="spaceG.html"><img src="img/spaceGymNavLogoRemove.png"
+                                alt="SpaceGym Logo" /></a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html"><strong>Schedule</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html"><strong>Shop</strong></a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><strong>Account</strong>
+                    </a>
+                    <div class="dropdown-menu" style="background-color: color#7ed957; box-shadow:0 0 5px #7ed957;
+                text-shadow: 0 0 5px #7ed957;">
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modal1" role="button"
+                            href="#">Register</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#modal2" role="button"
+                            id="loginButton2" href="#">Log In</a>
+                    </div>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="modal1" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginEmail">Email Address</label>
+                                        <input type="email" class="form-control form-control-sm" id="loginEmail"
+                                            placeholder="Enter primary email">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginUsername">New Username</label>
+                                        <input type="name" class="form-control form-control-sm" id="NewloginUsername"
+                                            placeholder="Select a username">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginPassword">New Password</label>
+                                        <input type="password" class="form-control form-control-sm"
+                                            id="NewloginPassword" placeholder="Select a password">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-dark btn-sm ml-auto"
+                                        data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm ml-1">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--logIn modal-->
+        <div id="modal2" class="modal fade" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Log In</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginUsername">Username</label>
+                                        <input type="name" class="form-control form-control-sm" id="loginUsername"
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginPassword">Password</label>
+                                        <input type="password" class="form-control form-control-sm" id="loginPassword"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-dark btn-sm ml-auto"
+                                        data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-success btn-sm ml-1">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--logIn modal above-->
+    </header>
+    
+    <div id="calendar"></div> 
+
+    <footer class="site-footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-2 offset-1">
+                    <ul class="list-unstyled">
+                        <li><a class="btn" href="#contactModal">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="icon" class="col-6 col-sm-5 text-center">
+                    <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/">Insta<i
+                            class="fa fa-instagram"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/">Facebook<i
+                            class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">Twitter<i
+                            class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/">Youtube<i
+                            class="fa fa-youtube"></i></a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a role="button" class="btn btn-link" href="tel+12065551234"><i class="fa fa-phone"></i> 867-5309
+                    </a><br />
+                    <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i
+                            class="fa fa-envelope-o"></i> spacegym@urmommashouse.org</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/calendar.js/evo-calendar.js"></script>
+    <script>
+        $(function () {
+            $("#loginButton").click(function () {
+                $("#loginModal").modal("show");
+            });
+            $("#signupButton").click(function () {
+                $("#signupModal").modal("show");
+            });
+            $("#contactButton").click(function () {
+                $("#contactModal").modal("show");
+            });
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+          $("#calendar").evoCalendar({
+            settingName: settingValue,
+          });
+        });
+        $("#calendar").evoCalendar({
+          theme: "Midnight Blue",
+        });
+        $("#calendar").evoCalendar("addCalendarEvent", {
+          id: "webShow",
+          name: "Nucamp Presentation",
+          description: "Present your Nucamp Bootstrap Project",
+          date: "July 03, 2021",
+          type: "enent",
+        });
+        $("#calendar").evoCalendar("addCalendarEvent", [
+          {
+            id: "bDay",
+            name: "Birthday",
+            date: "May 30, 1993",
+            type: "birthday",
+            everyYear: true,
+          },
+          {
+            id: "workout",
+            name: "Limits Day!",
+            description: "We exceed your Limits",
+            date: "July 02, 2021",
+            type: "event",
+            everyYear: true,
+          },
+          {
+            id: "holiday",
+            name: "July 4th!",
+            description: "May the 4th be with you",
+            date: "July 04, 2021",
+            type: "birthday",
+            everyYear: true,
+          },
+        ]);
+    </script>
+
+</body>
+
+</html>
